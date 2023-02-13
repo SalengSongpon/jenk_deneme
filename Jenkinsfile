@@ -1,4 +1,4 @@
-pipeline {
+/* pipeline {
     environment {
         registry = 'jenk_deneme/ml_model'
         dockerImage = ''
@@ -14,5 +14,27 @@ pipeline {
             }
         }
 
+    }
+} */
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
